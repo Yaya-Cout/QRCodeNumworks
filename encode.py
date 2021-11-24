@@ -12,10 +12,10 @@ while SCAN:
     _, frame = cap.read()
 
     decodedobjects = pyzbar.decode(frame)
-    SCAN = False
     for obj in decodedobjects:
         data = obj.data
         print("Data :", data)
+        SCAN = False
         break
 
     cv2.imshow("QRCode", frame)
